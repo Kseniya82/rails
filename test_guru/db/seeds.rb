@@ -12,17 +12,18 @@ categories= Category.create!([
   { title: 'Hard'}
 ])
 
-tests = Test.create!([
-  { title: 'Физика', category_id: categories[0].id },
-  { title: 'История', category_id: categories[0].id },
-  { title: 'Философия', category_id: categories[1].id },
-  { title: 'Искусство', category_id: categories[2].id }
-])
-
 users = User.create!([
   { name:'Иван Иванович', access: 'user' },
   { name:'Мария Петрова', access: 'user' },
-  { name:'Колобок', access: 'user' }
+  { name:'Колобок', access: 'user' },
+  { name: 'Admin', access: 'admin'}
+])
+
+tests = Test.create!([
+  { title: 'Физика', category_id: categories[0].id, user_id: users[3].id },
+  { title: 'История', category_id: categories[0].id, user_id: users[3].id },
+  { title: 'Философия', category_id: categories[1].id, user_id: users[3].id },
+  { title: 'Искусство', category_id: categories[2].id, user_id: users[3].id }
 ])
 
 questions = Question.create!([
