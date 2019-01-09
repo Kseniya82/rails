@@ -1,6 +1,9 @@
 class User < ApplicationRecord
+  has_many :results, dependent: :destroy
+  has_many :tests, through: :results, dependent: :destroy
+  has_many :own_tests, class_name: "Test", inverse_of: :creater, dependent: :restrict_with_exception
+
   def select_all_tests(level)
-    Test.joins('JOIN testers ON tests.id = testers.test_id')
-    .where(level: level, testers: { user_id: self.id } )
+    tests.where(level: level)
   end
 end

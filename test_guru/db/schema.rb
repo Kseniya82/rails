@@ -35,13 +35,13 @@ ActiveRecord::Schema.define(version: 2018_12_23_111444) do
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
-  create_table "testers", force: :cascade do |t|
+  create_table "results", force: :cascade do |t|
     t.integer "test_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["test_id"], name: "index_testers_on_test_id"
-    t.index ["user_id"], name: "index_testers_on_user_id"
+    t.index ["test_id"], name: "index_results_on_test_id"
+    t.index ["user_id"], name: "index_results_on_user_id"
   end
 
   create_table "tests", force: :cascade do |t|
@@ -50,7 +50,9 @@ ActiveRecord::Schema.define(version: 2018_12_23_111444) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
+    t.index ["user_id"], name: "index_tests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
