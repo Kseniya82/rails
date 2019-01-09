@@ -41,7 +41,7 @@ answers = Answer.create!([
   { body: 'Всемиррный потоп', question_id: questions[3].id }
 ])
 
-testers = Tester.create!([
+results = Result.create!([
   { test_id: tests[0].id, user_id: users[2].id },
   { test_id: tests[0].id, user_id: users[1].id },
   { test_id: tests[1].id, user_id: users[1].id },
