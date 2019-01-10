@@ -7,6 +7,6 @@ class Answer < ApplicationRecord
   scope :rigth_answers, -> { where(correct: true) }
 
   def validate_count_answer
-    errors.add(:base) unless question.answers.length < 4
+    errors.add(:base) if question.answers.count >= 4
   end
 end
