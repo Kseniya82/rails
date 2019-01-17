@@ -1,5 +1,4 @@
 class TestsController < ApplicationController
-
   before_action :test_find, only: [:show, :update, :destroy, :edit]
 
   def index

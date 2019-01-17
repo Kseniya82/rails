@@ -1,7 +1,10 @@
 module QuestionsHelper
   def question_header(question)
-    "Edit #{question.test.title} question"if question.persisted?
-    "Create New #{question.test.title} question" if question.new_record?
+    if question.persisted?
+      "Edit #{question.test.title} question"
+    else
+      "Create New #{question.test.title} question"
+    end
   end
 
   def github_url(author, repo)
