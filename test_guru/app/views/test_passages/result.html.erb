@@ -1,0 +1,9 @@
+<h1>The <%= @test_passage.test.title %> Test was Comleted</h1>
+<p>Percent correct answers <%= @percent %></p>
+<h2 class="result_header"><%= result_header(@percent, @test_passage) %></h2>
+<style type="text/css">
+  .result_header {
+    color: <%= result_color(@percent) %>;}
+</style>
+
+<p><%= link_to 'Back', tests_path %></p>

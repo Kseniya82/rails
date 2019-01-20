@@ -8,4 +8,7 @@
                   test_path(test),
                   method: :delete,
                   data: {confirm: 'You realy want delete?'} %>
+  </td>
+  <td><%= button_to 'Start', start_test_path(test) %></td>
+
 </tr>
