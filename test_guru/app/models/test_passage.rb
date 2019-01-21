@@ -15,11 +15,11 @@ class TestPassage < ApplicationRecord
   end
 
   def percent_correct_answers
-    self.correct_questions.to_f / test.questions.count * 100
+    correct_questions.to_f / test.questions.count * 100
   end
 
   def current_question_number
-    test.questions.ids.sort.index(current_question.id) + 1
+    test.questions.order(:id).where('id < ?', current_question.id).size + 1
   end
 
   def successful?
@@ -33,8 +33,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answers?(answer_ids)
-    return false if answer_ids.nil?
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers.ids.sort == Array(answer_ids).map(&:to_i).sort
   end
 
   def correct_answers
@@ -42,11 +41,10 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    if self.new_record?
+    if new_record?
       test.questions.first
     else
       test.questions.order(:id).where('id > ?', current_question.id).first
     end
   end
-
 end
