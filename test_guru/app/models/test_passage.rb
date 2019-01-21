@@ -1,39 +1,39 @@
 class TestPassage < ApplicationRecord
-  # не работает корретно или вообще не работает непонятно
-  attr_accessor :question_number
-
   belongs_to :test
   belongs_to :user
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
-  around_update :next_question
+  before_validation :set_current_question
 
   def completed?
     current_question.nil?
   end
 
   def accept!(answer_ids)
-    if correct_answers?(answer_ids)
-      # При тестировании один раз при трассировке было корректное кол-во правильных ответов
-      # повторить не смогла, все время их 0
-      self.correct_questions += 1
-    end
+    self.correct_questions += 1 if correct_answers?(answer_ids)
     save!
   end
 
-  def percent_correct_answers (test_passage)
-    test_passage.correct_questions / test_passage.test.questions.count * 100
+  def percent_correct_answers
+    self.correct_questions.to_f / test.questions.count * 100
+  end
+
+  def current_question_number
+    test.questions.ids.sort.index(current_question.id) + 1
+  end
+
+  def successful?
+    percent_correct_answers >= 85
   end
 
   private
 
-  def before_validation_set_first_question
-    self.current_question = test.questions.first if test.present?
-    self.question_number = 1
+  def set_current_question
+    self.current_question = next_question
   end
 
   def correct_answers?(answer_ids)
+    return false if answer_ids.nil?
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 
@@ -42,8 +42,11 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    self.current_question = self.test.questions.order(:id).where('id > ?', current_question.id).first
-    self.question_number += 1
+    if self.new_record?
+      test.questions.first
+    else
+      test.questions.order(:id).where('id > ?', current_question.id).first
+    end
   end
 
 end
