@@ -13,10 +13,10 @@ categories= Category.create!([
 ])
 
 users = User.create!([
-  { name:'Иван Иванович', access: 'user' },
-  { name:'Мария Петрова', access: 'user' },
-  { name:'Колобок', access: 'user' },
-  { name: 'Admin', access: 'admin'}
+  { name:'Иван Иванович', access: 'user', email: 'ivan@example.com' },
+  { name:'Мария Петрова', access: 'user', email: 'mary@example.com'  },
+  { name:'Колобок', access: 'user' , email: 'cicle@example.com' },
+  { name: 'Admin', access: 'admin', email: 'admin@example.com' }
 ])
 
 tests = Test.create!([
@@ -39,13 +39,4 @@ answers = Answer.create!([
   { body: 'Рене Декарт', question_id: questions[2].id },
   { body: '9 вал', question_id: questions[3].id },
   { body: 'Всемиррный потоп', question_id: questions[3].id }
-])
-
-results = Result.create!([
-  { test_id: tests[0].id, user_id: users[2].id },
-  { test_id: tests[0].id, user_id: users[1].id },
-  { test_id: tests[1].id, user_id: users[1].id },
-  { test_id: tests[1].id, user_id: users[2].id },
-  { test_id: tests[3].id, user_id: users[2].id },
-  { test_id: tests[2].id, user_id: users[0].id }
 ])
