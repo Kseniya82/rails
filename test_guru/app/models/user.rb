@@ -3,7 +3,9 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages, dependent: :destroy
   has_many :own_tests, class_name: "Test", inverse_of: :creater, dependent: :restrict_with_exception
 
-  validates :email, presence: true
+  has_secure_password
+
+  validates :email, presence: true, uniqueness: true, format: { with: /@/, message: "not valid email" }
 
   def select_all_tests(level)
     tests.where(level: level)
