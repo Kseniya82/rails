@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     @user.name = 'user_name'
     if @user.save
       session[:user_id] = @user.id
-      current_user
       redirect_to tests_path
     else
       render :new

@@ -1,5 +1,7 @@
 module SessionsHelper
   def flash_message(key)
-    content_tag :p, flash[key], :id => key, :class => 'flash'
+    unless flash[key].nil?
+      content_tag :p, flash[key], id: key, class: "flash #{key}"
+    end
   end
 end
