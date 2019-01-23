@@ -2,9 +2,7 @@ class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :find_test_passage, only: %i[show update result]
 
-  def show
-
-  end
+  def show; end
 
   def result
     @percent = @test_passage.percent_correct_answers

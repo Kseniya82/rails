@@ -1,9 +1,17 @@
 <%= form_with model: @user, local: true do |form| %>
   <%= render '/shared/errors', resource: @user %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, id: :name %>
+  </p>
 
   <p>
     <%= form.label :email %><br>
     <%= form.text_field :email, id: :email %>
+  </p>
+  <p>
+    <%= form.label :access %><br>
+    <%= form.text_field :access, id: :access  %>
   </p>
 
   <p>
