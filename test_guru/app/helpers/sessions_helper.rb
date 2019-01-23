@@ -1,7 +1,5 @@
 module SessionsHelper
   def flash_message(key)
-    unless flash[key].nil?
-      content_tag :p, flash[key], id: key, class: "flash #{key}"
-    end
+    content_tag :p, flash[key], id: key, class: "flash #{key}" if !flash[key].blank?
   end
 end
