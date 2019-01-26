@@ -12,7 +12,8 @@
   <%= @test.questions.count  %>
 </p>
 
-<p><%= link_to 'All tests', tests_path%></p>
+<p><%= link_to 'Back', admin_tests_path%></p>
+<p><%= link_to 'Edit', edit_admin_test_path%></p>
 <h2>Вопросы теста</h2>
 <p><%= link_to 'New question', new_test_question_path(@test) %></p>
 <table>
