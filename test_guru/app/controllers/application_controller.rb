@@ -1,20 +1,15 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :logged_in?
+
+  before_action :configure_sign_up_params, only: [:create], if: :devise_controller?
+
+  def after_sign_in_path_for(user)
+    user.admin? ? admin_tests_path : root_path
+  end
 
   private
 
-  def authenticate_user!
-    unless current_user
-      cookies[:redirect_path] = request.fullpath
-      redirect_to login_path, alert: 'Login failed! Verify Email and Password please'
-    end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def logged_in?
-    current_user.present?
-  end
 end
