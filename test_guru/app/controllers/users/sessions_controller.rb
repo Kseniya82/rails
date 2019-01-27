@@ -11,7 +11,7 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     super
-    if current_user.full_name.present?
+    flash[:notice] = "Привет, #{current_user.full_name.presence || current_user.email}"
       flash[:notice] = "Привет, #{current_user.full_name}"
     else
       flash[:notice] = "Welcome, #{current_user.email}"
