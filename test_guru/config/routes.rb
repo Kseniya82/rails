@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
   root 'tests#index'
 
-  devise_for :users, controllers: { registrations: 'users/registrations' }, path_names: { sign_in: :login, sign_out: :logout }
+  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' },
+                     path_names: { sign_in: :login, sign_out: :logout }
 
   resources :tests, only: :index do
-
-    member do
-      post :start
-    end
+    post :start, on: :member
   end
 
   resources :test_passages, only: %i[show update] do

@@ -10,16 +10,11 @@
   </head>
 
   <body>
-
-    <% if user_signed_in? %>
-      <p class="nav_user">
-        Welcome, <b><%= current_user.email %></b> Guru |
-        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-      </p>
-    <% end %>
-
+    <p>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete %> |
+      <%= link_to 'Sing up', new_user_registration_path %> 
+    </p>
     <%= render 'shared/flash' %>
-
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>

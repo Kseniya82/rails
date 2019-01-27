@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Admiu Panel | TestGuru</title>
+    <title>Admin Panel | TestGuru</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,7 +10,15 @@
   </head>
 
   <body>
-    <%= render 'admin/nav' %>
+    <div class="nav nav-admin">
+      <span class="nav-admin title">TestGuru Admin Panel</span>
+
+      <div class="nav-admin user">
+        Welcome, <b class='nav-admin user-email'><%= current_user.email %></b> Guru |
+        <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+      </div>
+    </div>
+
     <%= render 'shared/flash' %>
 
     <%= yield %>

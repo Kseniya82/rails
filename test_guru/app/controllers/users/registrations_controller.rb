@@ -10,12 +10,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    super
-    if resource.first_name.present? && resource.last_name.present?
-      flash[:notice] = "Привет, #{resource.first_name} #{resource.last_name}"
-    end
-  end
+  #v def create
+  #   super
+  # end
 
   # GET /resource/edit
   # def edit
