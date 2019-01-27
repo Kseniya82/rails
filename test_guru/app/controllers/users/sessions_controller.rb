@@ -12,10 +12,6 @@ class Users::SessionsController < Devise::SessionsController
   def create
     super
     flash[:notice] = "Привет, #{current_user.full_name.presence || current_user.email}"
-      flash[:notice] = "Привет, #{current_user.full_name}"
-    else
-      flash[:notice] = "Welcome, #{current_user.email}"
-    end
   end
 
   # DELETE /resource/sign_out
