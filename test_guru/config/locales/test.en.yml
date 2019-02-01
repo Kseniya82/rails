@@ -1,0 +1,45 @@
+en:
+  tests:
+    index:
+      header: "Available tests"
+      title: "Title"
+      level: "Level"
+      questions: "Questions"
+      action: "Action"
+    test:
+      start: "Start"
+
+  admin:
+    tests:
+      create:
+        success: "Test was successfully created"
+      index:
+        header: "Available tests"
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        action: "Action"
+        new_test: "New Test"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "You realy want delete?"
+      edit:
+        header: "Edit %{title} Test"
+        back: "Back"
+      new:
+        header: "Create New Test"
+        back: "Back"
+      show: 
+        header: "Test:"
+        title: "Test title:"
+        level: "Test level:"
+        count_questions: "Test question count:"
+        back: "Back"
+        edit: "Edit"
+        questions: "Test Questions"
+        new: "New Question"
+        id: "Id"
+        body: "Body"
+        action: "Action"

@@ -1,0 +1,45 @@
+ru:
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      questions: "Вопросы"
+      action: "Действие"
+    test:
+      start: "Старт"
+
+  admin:
+    tests:
+      create:
+        success: "Тест успешно создан"
+      index:
+        header: "Доступные тесты"
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        action: "Действие"
+        new_test: "Новый Тест"
+      test:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Хотите удалить?"
+      edit:
+        header: "Редактировать %{title} Тест"
+        back: "Назад"
+      new:
+        header: "Создать Новый Тест"
+        back: "Назад"
+      show:
+        header: "Тест:"
+        title: "Название теста:"
+        level: "Уровень теста:"
+        count_questions: "Кол-во вопросов в тесте:"
+        back: "Назад"
+        edit: "Редактировать"
+        questions: "Вопросы теста"
+        new: "Новый вопрос"
+        id: "№"
+        body: "Содержание"
+        action: "Действие"

@@ -1,0 +1,8 @@
+ru:
+  admin:
+    questions:
+      question:
+        show: "Покахзать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Хотите удалить?"
