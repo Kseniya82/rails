@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TestGuru</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,12 +12,12 @@
   </head>
 
   <body>
-    <p>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete %> |
-      <%= link_to 'Sing up', new_user_registration_path %> 
-    </p>
-    <%= render 'shared/flash' %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
+    <%= render 'shared/nav' %>
+
+    <div class="container">
+      <%= render 'shared/flash' %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
