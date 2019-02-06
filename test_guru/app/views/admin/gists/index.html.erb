@@ -1,0 +1,19 @@
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-6">
+    <h2><%= t('.header') %></h2>
+
+    <div class="table-responsive">
+      <table class="table table-bordered  mt-3">
+        <thead class="thead-light">
+          <tr>
+              <th><%= t('.question_body') %></th>
+              <th><%= t('.user_email') %></th>
+              <th><%= t('.gist_id') %></th>
+            </tr>
+        </thead>
+
+        <%= render @gists %>
+      </table>
+    </div>
+  </div>
+</div>

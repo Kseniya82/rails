@@ -2,3 +2,6 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершен"
+    gist:
+      success_html: "Gist успешно сохранен <a href=%{link} > Gist </a>"
+      failure: "Во время сохранения Gist произошла ошибка"

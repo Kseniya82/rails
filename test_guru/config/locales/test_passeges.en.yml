@@ -2,3 +2,6 @@ en:
   test_passages:
     result:
       header: "The %{title} Test was Completed!"
+    gist:
+      success_html: "Gist was successfully created <a href=%{link} > Gist </a>"
+      failure: "An error occurred while saving gist"

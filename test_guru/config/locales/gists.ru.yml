@@ -1,0 +1,8 @@
+ru:
+  admin:
+    gists:
+      index:
+        header: "Сохраненные Gists"
+        question_body: "Текст вопроса"
+        user_email: "Электронная почта пользователя"
+        gist_url: "Ссылка на Gist"

@@ -1,6 +1,6 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_test_passage, only: %i[show update result]
+  before_action :find_test_passage, only: %i[show update result gist]
 
   def show; end
 
@@ -15,6 +15,18 @@ class TestPassagesController < ApplicationController
     else
       render :show
     end
+  end
+
+  def gist
+    question = @test_passage.current_question
+    result = GistQuestionService.new(question).call
+    if result.success?
+      flash[:nonice] = "#{t('.success_html', link: result.html_url)}"
+      current_user.gists.create!(question_id: question.id, url: result.html_url)
+    else
+      flash[:alert] = t('.failure')
+    end
+    redirect_to @test_passage
   end
 
   private
