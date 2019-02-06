@@ -17,3 +17,5 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+
+  description_gist: "A question about %{title} from TestGuru"

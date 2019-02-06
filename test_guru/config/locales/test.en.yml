@@ -20,6 +20,7 @@ en:
         questions: "Questions"
         action: "Action"
         new_test: "New Test"
+        show_gists: "Show Gists"
       test:
         show: "Show"
         edit: "Edit"
@@ -31,7 +32,7 @@ en:
       new:
         header: "Create New Test"
         back: "Back"
-      show: 
+      show:
         header: "Test:"
         title: "Test title:"
         level: "Test level:"

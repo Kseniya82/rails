@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages, dependent: :destroy
   has_many :own_tests, class_name: "Test", inverse_of: :creater, dependent: :restrict_with_exception
+  has_many :gists, dependent: :destroy
 
   def admin?
     is_a?(Admin)
@@ -25,5 +26,9 @@ class User < ApplicationRecord
 
   def full_name
     [first_name, last_name].select(&:present?).join(' ').titleize
+  end
+
+  def save_gist(question, result)
+    self.gists.create!(user_email: self.email, question_body: question.body[0..24], question_id: question.id, gist_url: result.id)
   end
 end

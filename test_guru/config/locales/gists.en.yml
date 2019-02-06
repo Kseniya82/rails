@@ -1,0 +1,8 @@
+en:
+  admin:
+    gists:
+      index:
+        header: "Saved Gists"
+        question_body: "Question Body"
+        user_email: "User Email"
+        gist_url: "Link to Gist"
