@@ -20,4 +20,6 @@ ru:
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
 
-  description_gist: "Вопрос по теме %{title} из TestGuru"
+  sevrice:
+    gist_question_service:
+      description_gist: "Вопрос по теме %{title} из TestGuru"

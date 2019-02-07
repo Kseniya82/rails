@@ -27,8 +27,4 @@ class User < ApplicationRecord
   def full_name
     [first_name, last_name].select(&:present?).join(' ').titleize
   end
-
-  def save_gist(question, result)
-    self.gists.create!(user_email: self.email, question_body: question.body[0..24], question_id: question.id, gist_url: result.id)
-  end
 end

@@ -2,7 +2,7 @@ ru:
   admin:
     gists:
       index:
-        header: "Сохраненые Gists"
+        header: "Сохраненные Gists"
         question_body: "Текст вопроса"
         user_email: "Электронная почта пользователя"
-        gist_url: "Сыылка на Gist"
+        gist_url: "Ссылка на Gist"
