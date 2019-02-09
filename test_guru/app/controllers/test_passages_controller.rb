@@ -18,10 +18,11 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question).call
-    if result.errors.nil?
-      flash[:nonice] = "#{t('.success')} #{view_context.link_to('Gist', result.html_url, target: "_blank")}"
-      current_user.gists.create!(question_id: @test_passage.current_question.id, url: result.html_url)
+    question = @test_passage.current_question
+    result = GistQuestionService.new(question).call
+    if result.success?
+      flash[:nonice] = "#{t('.success_html', link: result.html_url)}"
+      current_user.gists.create!(question_id: question.id, url: result.html_url)
     else
       flash[:alert] = t('.failure')
     end
