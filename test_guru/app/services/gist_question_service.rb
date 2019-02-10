@@ -5,6 +5,12 @@ class GistQuestionService
     @client = client
   end
 
+  ResultObject = Struct.new(:html_url) do
+    def success?
+      html_url.present?
+    end
+  end
+  
   def call
     @client.create_gist(gist_params.to_json)
     ResultObject.new(@client.last_response.data[:html_url])
