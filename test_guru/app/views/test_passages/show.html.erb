@@ -3,6 +3,15 @@
   Question number <%= @test_passage.current_question_number %>
   from <%= @test_passage.test.questions.count %>
 </h2>
+
+<div class="progress bg-success">
+  <%= content_tag :div,
+                  '',
+                  class: "progress-bar",
+                  role: "progressbar",
+                  data: { current_number: @test_passage.current_question_number,
+                          count: @test_passage.test.questions.count } %>
+</div>
 <p>
   <b><%= @test_passage.current_question.body %></b>
 </p>

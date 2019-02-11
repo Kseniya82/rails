@@ -2,7 +2,10 @@
 <p>
   <%= link_to t('.new_test'), new_admin_test_path %>
 </p>
-<table>
+
+<%= render 'shared/errors', resource: @test %>
+
+<table class= "table">
   <tr>
     <th><%= t('.title') %></th>
     <th><%= t('.level') %></th>
