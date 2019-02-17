@@ -20,6 +20,13 @@ ru:
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
 
+  tests_mailer:
+    completed_test:
+      subject: 'Вы успешно завершили тест на TestGuru!'
+  feedback_mailer:
+    sent_feedback:
+        subject: 'Обратная связь мз ksu-test-guru!'
+
   services:
     gist_question_service:
       description_gist: "Вопрос по теме %{title} из TestGuru"

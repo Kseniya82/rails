@@ -1,0 +1,8 @@
+en:
+  feedbacks:
+    create:
+      success: 'Feedback successfully sent'
+      failed: 'Email and message not must blank'
+    new:
+      header: 'Form Feedback'
+      back: 'Back'
