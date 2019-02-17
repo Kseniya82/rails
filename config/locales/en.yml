@@ -19,7 +19,7 @@ en:
         other: "%{count} errors detected"
 
   tests_mailer:
-    completsd_test:
+    completed_test:
       subject: 'You just commpleted the TestGuru test!'
   feedback_mailer:
     sent_feedback:

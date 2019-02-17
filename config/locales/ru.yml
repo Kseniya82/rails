@@ -21,7 +21,7 @@ ru:
         other: "Обнаружено %{count} ошибки"
 
   tests_mailer:
-    completsd_test:
+    completed_test:
       subject: 'Вы успешно завершили тест на TestGuru!'
   feedback_mailer:
     sent_feedback:
