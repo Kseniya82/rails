@@ -1,0 +1,8 @@
+ru:
+  feedbacks:
+    create:
+      success: 'Сообщение обратной связи отослано'
+      failed: 'Заполните email и message'
+    new:
+      header: 'Форма обратной связи'
+      back: 'Назад'

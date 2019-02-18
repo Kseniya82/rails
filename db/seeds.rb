@@ -12,22 +12,15 @@ categories= Category.create!([
   { title: 'Hard'}
 ])
 
-users = User.create!([
-  { name:'Иван Иванович', access: 'user', email: 'ivan@example.com', password:'123456'},
-  { name:'Мария Петрова', access: 'user', email: 'mary@example.com', password:'123456'  },
-  { name:'Колобок', access: 'user' , email: 'cicle@example.com', password:'123456' },
-  { name: 'Admin', access: 'admin', email: 'admin@example.com', password:'123456' }
-])
-
 tests = Test.create!([
-  { title: 'Физика', category_id: categories[0].id, user_id: users[3].id },
-  { title: 'История', category_id: categories[0].id, user_id: users[3].id },
-  { title: 'Философия', category_id: categories[1].id, user_id: users[3].id },
-  { title: 'Искусство', category_id: categories[2].id, user_id: users[3].id }
+  { title: 'Физика', category_id: categories[0].id},
+  { title: 'История', category_id: categories[0].id},
+  { title: 'Философия', category_id: categories[1].id },
+  { title: 'Искусство', category_id: categories[2].id}
 ])
 
 questions = Question.create!([
-  { body: 'Какая физическая величнина измеряется в амперах', test_id: tests[0].id },
+  { body: 'Какая физическая величина измеряется в амперах', test_id: tests[0].id },
   { body: 'В каком году началась Вторая мировая война', test_id: tests[1].id },
   { body: 'Коиу принадлежит фраза: я мыслю, значит я существую', test_id: tests[2].id },
   { body: 'Картины Айвазовского', test_id: tests[3].id }

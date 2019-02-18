@@ -18,6 +18,13 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
 
+  tests_mailer:
+    completed_test:
+      subject: 'You just commpleted the TestGuru test!'
+  feedback_mailer:
+    sent_feedback:
+        subject: 'Feedback from ksu-test-guru'
+
   services:
     gist_question_service:
       description_gist: "A question about %{title} from TestGuru"

@@ -1,0 +1,17 @@
+<%= form_with(model: @feedback, url: feedback_path, local:true, method: :post) do |form| %>
+  <%= render '/shared/errors', resource: @feedback %>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email, id: :feedback_email %>
+  </div>
+
+  <div>
+    <%= form.label :message %><br>
+    <%= form.text_area :message, id: :feedback_message,rows: 7, cols: 40%>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
