@@ -4,13 +4,13 @@ class TestPassagesController < ApplicationController
 
   def show; end
 
-  def result
-    @percent = @test_passage.percent_correct_answers
-  end
+  def result; end
 
   def update
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed?
+      @test_passage.save_result
+      BadgeService.new(@test_passage).call if @test_passage.successful?
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else

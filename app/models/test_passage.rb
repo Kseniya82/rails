@@ -1,9 +1,13 @@
 class TestPassage < ApplicationRecord
+  MIN_CORRECT_PERCENT = 85
+
   belongs_to :test
   belongs_to :user
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :set_current_question
+
+  scope :success, -> { where('percent >= ?', MIN_CORRECT_PERCENT) }
 
   def completed?
     current_question.nil?
@@ -23,7 +27,11 @@ class TestPassage < ApplicationRecord
   end
 
   def successful?
-    percent_correct_answers >= 85
+    percent >= MIN_CORRECT_PERCENT
+  end
+
+  def save_result
+    update_columns(percent: percent_correct_answers)
   end
 
   private
