@@ -15,6 +15,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answers?(answer_ids)
+    self.percent = percent_correct_answers
     save!
   end
 
@@ -28,10 +29,6 @@ class TestPassage < ApplicationRecord
 
   def successful?
     percent >= MIN_CORRECT_PERCENT
-  end
-
-  def save_result
-    update_columns(percent: percent_correct_answers)
   end
 
   private
