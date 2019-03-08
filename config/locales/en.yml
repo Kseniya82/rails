@@ -11,6 +11,10 @@ en:
         category_id: "Cetegory"
     select:
       prompt: "Please select"
+    badge:
+      category: "Successful passing of all tests of category"
+      level: "Successful passing of all tests of level"
+      attempt: "Number of attempts for successful passing of the test"
 
   shared:
     errors:
