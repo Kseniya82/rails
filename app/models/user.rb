@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages, dependent: :destroy
   has_many :own_tests, class_name: "Test", inverse_of: :creater, dependent: :restrict_with_exception
   has_many :gists, dependent: :destroy
+  has_many :users_badges, dependent: :destroy
+  has_many :badges, through: :users_badges, dependent: :destroy
 
   def admin?
     is_a?(Admin)

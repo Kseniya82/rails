@@ -1,5 +1,5 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
-<h3>Percent correct answers <%= @percent %></h3>
+<h3>Percent correct answers <%= @test_passage.percent %></h3>
 <% if @test_passage.successful? %>
   <h2 class="text-success"><%= result_header(@test_passage) %></h2>
 <% else %>

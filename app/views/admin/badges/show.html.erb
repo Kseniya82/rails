@@ -1,0 +1,31 @@
+<p>
+  <strong>Title:</strong>
+  <%= @badge.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @badge.url %>
+</p>
+
+<p>
+  <strong>rule_name:</strong>
+  <%= @badge.rule_name %>
+</p>
+<p>
+  <strong>rule_value:</strong>
+  <%= @badge.rule_value %>
+</p>
+
+<p>
+  Предпросмотр
+  <div class="card" style="width: 18rem;">
+  <img src=<%= @badge.url %> class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= @badge.title %></h5>
+  </div>
+</div>
+</p>
+
+<%= link_to 'Edit', edit_admin_badge_path(@badge) %> |
+<%= link_to 'Back', admin_badges_path %>
