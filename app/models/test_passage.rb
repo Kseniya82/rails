@@ -31,6 +31,18 @@ class TestPassage < ApplicationRecord
     percent >= MIN_CORRECT_PERCENT
   end
 
+  def time_ended?
+    time_left <= 0
+  end
+
+  def time_left
+    created_at + test.time_limit - Time.current if test.time_limit.positive?
+  end
+
+  def timer?
+    test.time_limit.present?
+  end
+
   private
 
   def set_current_question
