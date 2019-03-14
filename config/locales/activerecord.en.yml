@@ -7,7 +7,6 @@ en:
       test:
         title: "Title"
         category: "Category"
-        time_limit: "Time limit, s"
 
     errors:
       messages:

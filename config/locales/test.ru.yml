@@ -20,7 +20,6 @@ ru:
         title: "Название"
         level: "Уровень"
         questions: "Вопросы"
-        time_limit: "Ограничение по времени, с"
         action: "Действие"
         new_test: "Новый Тест"
         show_gists: "Показать Gists"

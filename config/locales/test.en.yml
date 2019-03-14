@@ -19,7 +19,6 @@ en:
         header: "Available tests"
         title: "Title"
         level: "Level"
-        time_limit: "Time Limit, s"
         questions: "Questions"
         action: "Action"
         new_test: "New Test"
