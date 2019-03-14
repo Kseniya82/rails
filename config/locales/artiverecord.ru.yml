@@ -7,6 +7,7 @@ ru:
       test:
         title: "Название"
         category: "Категория"
+        time_limit: "Ограничение по времении, с"
 
     errors:
       messages:
