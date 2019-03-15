@@ -4,6 +4,7 @@ ru:
       header: "Доступные тесты"
       title: "Название"
       level: "Уровень"
+      time_limit: "Ограничение по времени, с"
       questions: "Вопросы"
       action: "Действие"
     test:
@@ -19,6 +20,7 @@ ru:
         header: "Доступные тесты"
         title: "Название"
         level: "Уровень"
+        time_limit: "Ограничение по времени, с"
         questions: "Вопросы"
         action: "Действие"
         new_test: "Новый Тест"

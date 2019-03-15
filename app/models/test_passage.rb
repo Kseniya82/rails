@@ -10,7 +10,7 @@ class TestPassage < ApplicationRecord
   scope :success, -> { where('percent >= ?', MIN_CORRECT_PERCENT) }
 
   def completed?
-    current_question.nil?
+    current_question.nil? || time_ended? if timer?
   end
 
   def accept!(answer_ids)
@@ -29,6 +29,18 @@ class TestPassage < ApplicationRecord
 
   def successful?
     percent >= MIN_CORRECT_PERCENT
+  end
+
+  def time_ended?
+    time_left <= 0
+  end
+
+  def time_left
+    created_at + test.time_limit - Time.current
+  end
+
+  def timer?
+    test.time_limit.present?
   end
 
   private

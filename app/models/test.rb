@@ -9,6 +9,7 @@ class Test < ApplicationRecord
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level }
+  validates :time_limit, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 3599 }, if: :timer?
 
   scope :easy, -> { where(level: 0..1) }
   scope :midle, -> { where(level: 2..4) }
@@ -17,5 +18,11 @@ class Test < ApplicationRecord
 
   def self.select_title_by_category(title)
     select_by_category(title).pluck(:title)
+  end
+
+  private
+
+  def timer?
+    time_limit.present?
   end
 end

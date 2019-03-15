@@ -12,5 +12,9 @@
     <%= form.label :category_id %><br>
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p><br>
+  <p>
+    <%= form.label :time_limit %><br>
+    <%= form.number_field :time_limit, id: :time_limit %>
+  </p><br>
   <p><%= form.submit %></p>
 <% end %>
